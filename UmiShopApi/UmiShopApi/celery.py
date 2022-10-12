@@ -9,12 +9,3 @@ app = Celery('UmiShopApi')
 app.config_from_object('django.conf:settings', namespace='CELERY')
 
 app.autodiscover_tasks()
-
-# from celery import Celery
-
-# app = Celery('UmiShopApi',
-#              broker='amqp://localhost',
-#              include=['UmiShopApi.tasks'])
-
-# if __name__ == '__main__':
-#     app.start()
