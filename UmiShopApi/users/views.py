@@ -5,6 +5,9 @@ from rest_framework.parsers import JSONParser
 from users.models import User
 from users.serializers import User, UserSerializer
 
+from .tasks import send_email
+from common.contact.sendEmail import contactByEmail
+
 
 @csrf_exempt
 def user_list(request):
@@ -18,6 +21,7 @@ def user_list(request):
         serializer = UserSerializer(data=data)
 
         if (serializer.is_valid()):
+            send_email.apply_async([data], countdown=60)
             serializer.save()
             return JsonResponse(serializer.data, status=201)
 
