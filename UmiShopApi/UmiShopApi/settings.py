@@ -17,18 +17,18 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']  # TODO add env from landbot
 
 # Console Log Mail
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Mail Trap
-# EMAIL_HOST = 'smtp.mailtrap.io'
-# EMAIL_HOST_USER = 'e71acbfe7d1f28'
-# EMAIL_HOST_PASSWORD = 'ea7bc0489b4952'
-# EMAIL_PORT = '2525'
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'e71acbfe7d1f28'
+EMAIL_HOST_PASSWORD = 'ea7bc0489b4952'
+EMAIL_PORT = '2525'
 
 # MailJet
-EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
-MAILJET_API_KEY = '9c821ff759147c3cea74b5dc39e8c78a'
-MAILJET_API_SECRET = 'aa887aaed76e215371cf8b5858fbf42f'
+# EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
+# MAILJET_API_KEY = '9c821ff759147c3cea74b5dc39e8c78a'
+# MAILJET_API_SECRET = 'aa887aaed76e215371cf8b5858fbf42f'
 
 # Application definition
 
