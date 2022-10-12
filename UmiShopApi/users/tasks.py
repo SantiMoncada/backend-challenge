@@ -9,7 +9,7 @@ logger = get_task_logger(__name__)
 
 
 @app.task
-def send_email():
-    contactByEmail()
+def send_email(data):
+    contactByEmail(data)
     logger.info("email sent")
-    return "helllou"
+    return True

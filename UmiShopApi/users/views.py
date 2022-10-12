@@ -12,9 +12,6 @@ from common.contact.sendEmail import contactByEmail
 @csrf_exempt
 def user_list(request):
     if (request.method == 'GET'):
-        debug = send_email.apply_async(countdown=5)
-        print(debug)
-
         users = User.objects.all()
         serializer = UserSerializer(users, many=True)
         return JsonResponse(serializer.data, safe=False)
@@ -24,6 +21,10 @@ def user_list(request):
         serializer = UserSerializer(data=data)
 
         if (serializer.is_valid()):
+            print(data)
+
+            send_email.apply_async([data], countdown=60)
+
             serializer.save()
             return JsonResponse(serializer.data, status=201)
 
