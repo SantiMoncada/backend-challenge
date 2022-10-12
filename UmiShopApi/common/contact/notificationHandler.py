@@ -2,7 +2,7 @@ from .sendEmail import contactByEmail
 from .sendSlack import contactBySlack
 
 
-def contactDepartment(data):
+def notificationHandler(data):
 
     if (data['topic'] == 'Sales'):
         message = "the customer " + data['email'] + \
