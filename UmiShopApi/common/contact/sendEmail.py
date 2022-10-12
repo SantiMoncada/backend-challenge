@@ -1,10 +1,10 @@
 from django.core.mail import send_mail
-from django.template.loader import render_to_string
 
 
-def contactByEmail(data):
-    html = render_to_string('emails/welcomeEmail.html', {
-        'name': data['name']
-    })
-    send_mail('test shubject', 'coollest message',
-              'noreply@umishop.com', [data['email']], html_message=html)
+def contactByEmail(subject, message, from_email, recipient_list, html=None):
+    if (html):
+        send_mail(subject, message, from_email,
+                  recipient_list, html_message=html)
+    else:
+        send_mail(subject, message, from_email,
+                  recipient_list)
