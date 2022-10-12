@@ -1,11 +1,13 @@
 from .sendEmail import contactByEmail
-from django.template.loader import render_to_string
+from .sendSlack import contactBySlack
 
 
 def contactDepartment(data):
 
     if (data['topic'] == 'Sales'):
-        # contactBySlack(data)
+        message = "the customer " + data['email'] + \
+            " had an issue with " + data['topic'] + "."
+        contactBySlack('product', message)
         return
     elif (data['topic'] == 'Pricing'):
         message = "the customer " + data['email'] + \
