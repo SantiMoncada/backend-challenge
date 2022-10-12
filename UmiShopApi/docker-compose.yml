@@ -1,16 +1,16 @@
 services:
   rabbitmq:
     image: rabbitmq
-    network_mode: host
-    # ports:
-    #   - 5672:5672
+    #network_mode: host
+    ports:
+      - 5672:5672
 
   api:
     build: .
-    network_mode: host
-    # ports:
-    #   - 8000:8000
+    #network_mode: host
+    ports:
+      - 8000:8000
   celery:
     build: .
-    network_mode: host
+    #network_mode: host
     command: celery -A UmiShopApi worker -l INFO
