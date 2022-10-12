@@ -2,7 +2,6 @@ from __future__ import absolute_import, unicode_literals
 from celery.utils.log import get_task_logger
 
 from UmiShopApi.celery import app
-from common.contact.sendEmail import contactByEmail
 from common.contact.contactDepartment import contactDepartment
 
 logger = get_task_logger(__name__)
