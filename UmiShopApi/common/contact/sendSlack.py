@@ -1,10 +1,8 @@
 from cgitb import text
 import slack
-import os
-from pathlib import Path
 
 # TODO env
-token = "xoxb-4214307256676-4214331105828-M6tmLRTz9MXI7JHEvfUSnXAP"
+token = "xoxb-4214307256676-4214331105828-ehkdbSODyvPBItQWXdpMNjUd"
 client = slack.WebClient(token)
 
 
