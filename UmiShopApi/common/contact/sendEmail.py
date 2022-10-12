@@ -7,4 +7,4 @@ def contactByEmail(data):
         'name': data['name']
     })
     send_mail('test shubject', 'coollest message',
-              'noreply@umihop.com', [data['email']], html_message=html)
+              'noreply@umishop.com', [data['email']], html_message=html)
