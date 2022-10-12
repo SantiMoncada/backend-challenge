@@ -1,4 +1,25 @@
+
 # Landbot Backend Challenge
+
+Requirements
+
+python 3.10.6
+pip
+
+pip install -r requirements.txt
+
+
+python manage.py migrate
+
+
+docker run -p 5672:5672 rabbitmq
+
+python manage.py runserver
+
+celery -A UmiShopApi worker -l INFO
+
+
+ngrok http :8000
 
 ## Description
 
