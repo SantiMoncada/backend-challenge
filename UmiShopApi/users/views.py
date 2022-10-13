@@ -8,6 +8,7 @@ from users.serializers import User, UserSerializer
 
 from .tasks import send_email
 
+
 @api_view(['GET', 'POST'])
 def user_list(request):
     if (request.method == 'GET'):
@@ -27,13 +28,24 @@ def user_list(request):
         return JsonResponse(serializer.errors, status=400)
 
 
+@api_view(['GET'])
+def user_is_registered(request, email):
+    try:
+        user = User.objects.get(email=email)
+    except User.DoesNotExist:
+        return JsonResponse(data={}, status=404)
+
+    serializer = UserSerializer(user)
+    return JsonResponse(serializer.data)
+
+
 @api_view(['GET', 'PUT', 'DELETE'])
 def user_details(request, pk):
 
     try:
         user = User.objects.get(pk=pk)
     except User.DoesNotExist:
-        return JsonResponse(status=404)
+        return JsonResponse(data={}, status=404)
 
     if (request.method == 'GET'):
         serializer = UserSerializer(user)
@@ -50,4 +62,4 @@ def user_details(request, pk):
 
     elif request.method == 'DELETE':
         user.delete()
-        return JsonResponse(status=204)
+        return JsonResponse(data={}, status=204)
