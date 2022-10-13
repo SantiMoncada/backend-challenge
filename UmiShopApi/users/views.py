@@ -1,14 +1,14 @@
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
+
+from rest_framework.decorators import api_view
 
 from users.models import User
 from users.serializers import User, UserSerializer
 
 from .tasks import send_email
 
-
-@csrf_exempt
+@api_view(['GET', 'POST'])
 def user_list(request):
     if (request.method == 'GET'):
         users = User.objects.all()
@@ -27,7 +27,7 @@ def user_list(request):
         return JsonResponse(serializer.errors, status=400)
 
 
-@csrf_exempt
+@api_view(['GET', 'PUT', 'DELETE'])
 def user_details(request, pk):
 
     try:

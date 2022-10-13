@@ -1,11 +1,13 @@
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
+
+from rest_framework.decorators import api_view
+
 from assistance.serializer import assistanceSerializer
 from .taks import contact_product
 
 
-@csrf_exempt
+@api_view(['POST'])
 def assistance(request):
     if request.method == 'POST':
         data = JSONParser().parse(request)
