@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
     'assistance',
-    'slack'
+    'slack',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
