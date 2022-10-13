@@ -6,6 +6,7 @@ from rest_framework.decorators import api_view
 from users.models import User
 from users.serializers import User, UserSerializer
 
+from .tasks import send_email
 
 @api_view(['GET', 'POST'])
 def user_list(request):
