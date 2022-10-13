@@ -20,7 +20,7 @@ def user_list(request):
         serializer = UserSerializer(data=data)
 
         if (serializer.is_valid()):
-            send_email.apply_async([data], countdown=5)
+            send_email.apply_async([data], countdown=60)
             serializer.save()
             return JsonResponse(serializer.data, status=201)
 
