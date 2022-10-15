@@ -1,29 +1,38 @@
-# try the proyect online
+## Try the proyect online
 https://santimoncada.github.io/backend-challenge/
 
-# Landbot Backend Challenge
+## Run Project Locally
 
 Requirements
 
-ngrok
-python 3.10.6
-pip
+-ngrok
+
+-python 3.10.6
+
+-pip
+
 ```
 pip install -r requirements.txt
 
-python manage.py migrate
+python manage.py migrate --run-syncdb 
 
-docker run -p 5672:5672 rabbitmq
+#Each in one terminal
 
-python manage.py runserver
+    docker run -p 5672:5672 rabbitmq
 
-celery -A UmiShopApi worker -l INFO
+    celery -A UmiShopApi worker -l INFO
 
+    python manage.py runserver
 
-ngrok http :8000
+    ngrok http :8000
 ```
 
-## Description
+## Run Project Witch Docker
+```
+docker-compose up
+```
+
+# Description
 
 From UmiShop, we have concluded that we want to improve web sales using Landbot.
 
