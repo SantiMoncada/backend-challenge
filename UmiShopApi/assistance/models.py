@@ -6,3 +6,4 @@ from django.db import models
 class Assistance(models.Model):
     email = models.CharField(max_length=100, blank=False)
     topic = models.CharField(max_length=100, blank=False)
+    address = models.CharField(max_length=100, blank=False)

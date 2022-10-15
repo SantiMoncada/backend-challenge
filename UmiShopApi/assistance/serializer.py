@@ -5,4 +5,4 @@ from assistance.models import Assistance
 class assistanceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Assistance
-        fields = ['email', 'topic']
+        fields = ['email', 'topic', 'address']
