@@ -43,7 +43,7 @@ def assistance(request):
         if (serializer.is_valid()):
             serializer.save()
             contact_product.apply_async(([serializer.data]))
-            return JsonResponse({"Msg": "Notification sent", 'Data': serializer.data}, status=200)
+            return JsonResponse(serializer.data, status=200)
         else:
             return JsonResponse(serializer.errors, status=400)
 

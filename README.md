@@ -32,6 +32,18 @@ python manage.py migrate --run-syncdb
 docker-compose up
 ```
 
+## Run Tests
+```
+#Each in one terminal
+
+    docker run -p 5672:5672 rabbitmq
+
+    celery -A UmiShopApi worker -l INFO
+
+    python manage.py test
+
+```
+
 # Description
 
 From UmiShop, we have concluded that we want to improve web sales using Landbot.
