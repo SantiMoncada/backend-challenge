@@ -4,8 +4,10 @@ from celery import Celery
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'UmiShopApi.settings')
 
-app = Celery('UmiShopApi', broker="amqp://rabbitmq")
-# app = Celery('UmiShopApi')  # TODO env uncomment for local run outside docker
+if (os.environ.get('DOCKER') == 1):
+    app = Celery('UmiShopApi', broker="amqp://rabbitmq")
+else:
+    app = Celery('UmiShopApi')
 
 app.config_from_object('django.conf:settings', namespace='CELERY')
 

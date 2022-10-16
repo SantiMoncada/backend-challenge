@@ -9,26 +9,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-e+l07-6%f5-*ggrjsw8hg27&s-*ju7tw#&_f)s26)ifkpq_re7'
-
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY', 'django-insecure-e+l07-6%f5-*ggrjsw8hg27&s-*ju7tw#&_f)s26)ifkpq_re7')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = str(os.environ.get('DEBUG')) == "1"
 
-ALLOWED_HOSTS = ['*']  # TODO add env from landbot
+ALLOWED_HOSTS = os.environ.get(
+    'ALLOWED_HOSTS', '*').split(' ')
 
 # Console Log Mail
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# Mail Trap
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = 'e71acbfe7d1f28'
-EMAIL_HOST_PASSWORD = 'ea7bc0489b4952'
-EMAIL_PORT = '2525'
-
-# MailJet
-# EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
-# MAILJET_API_KEY = '9c821ff759147c3cea74b5dc39e8c78a'
-# MAILJET_API_SECRET = 'aa887aaed76e215371cf8b5858fbf42f'
+EMAIL_HOST = os.environ.get('EMAIL_HOST', '')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
+EMAIL_PORT = os.environ.get('EMAIL_PORT', '')
 
 # Application definition
 

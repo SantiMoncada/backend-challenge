@@ -44,6 +44,27 @@ docker-compose up
 
 ```
 
+### Env variables
+
+```
+    SECRET_KEY=
+    #0 or 1
+    DEBUG=
+
+    #allowed ip's separated by space
+    ALLOWED_HOSTS=
+
+    #Mail
+    EMAIL_HOST=
+    EMAIL_HOST_USER=
+    EMAIL_HOST_PASSWORD=
+    EMAIL_PORT =
+
+    SLACK_TOKEN =
+
+    #set to 0 if running outside docker set to 1 if running inside
+    DOCKER= 
+```
 # Description
 
 From UmiShop, we have concluded that we want to improve web sales using Landbot.
