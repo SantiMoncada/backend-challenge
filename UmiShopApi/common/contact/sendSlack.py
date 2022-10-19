@@ -1,8 +1,8 @@
-from cgitb import text
 import slack
+import os
 
 # TODO env
-token = "xoxb-4214307256676-4214331105828-ehkdbSODyvPBItQWXdpMNjUd"
+token = os.environ.get('SLACK_TOKEN', '')
 client = slack.WebClient(token)
 
 
