@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
-        run: docker-compose up -d
+        run: UmiShopApi/docker-compose up -d
       - name: Test
         run: docker exec -it umishopapi-api-1 python manage.py test
