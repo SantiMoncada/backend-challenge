@@ -13,5 +13,7 @@ jobs:
         run: echo "DOCKER=1" >> UmiShopApi/.env
       - name: Build the stack
         run: docker-compose -f UmiShopApi/docker-compose.yml up -d
+      - name: check docker name
+        run: docker ps
       - name: Test
         run: docker exec -it umishopapi-api-1 python manage.py test
