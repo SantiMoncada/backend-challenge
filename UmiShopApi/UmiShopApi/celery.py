@@ -2,12 +2,7 @@ from __future__ import absolute_import, unicode_literals
 import os
 from pathlib import Path
 from celery import Celery
-import dotenv
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-envPath = os.path.join(BASE_DIR, '.env')
-
-dotenv.read_dotenv(envPath)
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'UmiShopApi.settings')
 
 if (os.environ.get('DOCKER') == "0"):

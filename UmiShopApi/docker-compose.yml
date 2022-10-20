@@ -12,6 +12,4 @@ services:
       - .env
   celery:
     build: .
-    env_file:
-      - .env
     command: celery -A UmiShopApi worker -l INFO
