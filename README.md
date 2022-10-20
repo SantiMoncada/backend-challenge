@@ -1,6 +1,6 @@
 ## Try the proyect online
 https://santimoncada.github.io/backend-challenge/
-
+![Diagram of the frontend](./img/LanbotFlow.png "Picture")
 ## Run Project Locally
 
 Requirements
