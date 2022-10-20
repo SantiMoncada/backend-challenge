@@ -1,0 +1,15 @@
+name: backend-challenge
+on: push
+
+env:
+  DOCKER: 1
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the stack
+        run: docker-compose up -d
+      - name: Test
+        run: docker exec -it umishopapi-api-1 python manage.py test
