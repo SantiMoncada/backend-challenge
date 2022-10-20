@@ -14,4 +14,4 @@ jobs:
       - name: Build the stack
         run: docker-compose -f UmiShopApi/docker-compose.yml up -d
       - name: Test
-        run: docker exec -it umishopapi_api_1 python manage.py test
+        run: docker exec umishopapi_api_1 python manage.py test
