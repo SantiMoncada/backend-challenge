@@ -57,7 +57,7 @@ class AssistanceTestCase(APITestCase):
 
         # Deletes the issue
         response = self.client.delete(f'/api/assistance/{issue_id}')
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertEqual(response.status_code, status.HTTP_100_CONTINUE)
 
         # Tries to get it again but fails because it has been deleted
         response = self.client.get(f'/api/assistance/{issue_id}')
