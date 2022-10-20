@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: debug
-        run: ls
       - name: go in the api directory
         run: cd UmiShopApi
+      - name: debug
+        run: ls
       - name: Build the stack
         run: docker-compose up -d
       - name: Test
