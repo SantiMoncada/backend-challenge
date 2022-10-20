@@ -1,5 +1,8 @@
 name: backend-challenge
-on: push
+on: 
+  push:
+    branches:
+      - master
 
 env:
   DOCKER: 1

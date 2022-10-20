@@ -1,3 +1,4 @@
+[![backend-challenge](https://github.com/SantiMoncada/backend-challenge/actions/workflows/push.yml/badge.svg?branch=master)](https://github.com/SantiMoncada/backend-challenge/actions/workflows/push.yml)
 ## Try the proyect online
 https://santimoncada.github.io/backend-challenge/
 ![Diagram of the frontend](./img/LanbotFlow.png "Picture")
