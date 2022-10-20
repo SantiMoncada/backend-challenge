@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: create env file
-      - run: echo "DOCKER=1" >> UmiShopApi/.env
+      - run: printf "DOCKER=1" > UmiShopApi/.env
       - name: Build the stack
         run: docker-compose -f UmiShopApi/docker-compose.yml up -d
       - name: Test
