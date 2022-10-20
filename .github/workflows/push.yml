@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: go in the api directory
+        run: cd UmiShopApi
       - name: Build the stack
-        run: UmiShopApi/docker-compose up -d
+        run: docker-compose up -d
       - name: Test
         run: docker exec -it umishopapi-api-1 python manage.py test
